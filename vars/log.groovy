@@ -10,3 +10,7 @@ def info(message) {
 def error(message) {
     echo "Error: ${message}"
 }
+
+def config(config) {
+  sh "echo Region: ${config.region} ECR repo: ${config.repo}"
+}
