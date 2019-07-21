@@ -13,4 +13,5 @@ def error(message) {
 
 def config(config) {
   sh "echo Region: ${config.region} ECR repo: ${config.repo}"
+  sh "echo Project File: ${config.projectFile} Source Directory: ${config.sourceDir}"
 }
