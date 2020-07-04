@@ -1,10 +1,10 @@
 def call(Map parameters = [:]) {
     try {
-        configFile = 'resources/config/nonprod.yaml'
-        Map config = readYaml file: configFile
+        String data = libraryResource 'config/nonprod.yaml'
+        Map config = readYaml text: data
         return config
     } catch (Exception e) {
-        echo "WARNING: Could not load data from config file at ${configFile}. Exception: ${e.getMessage()}"
+        echo "Exception: ${e.getMessage()}"
     }
     return ''
 }
