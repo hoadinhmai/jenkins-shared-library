@@ -7,15 +7,21 @@ def appConfig = [
 
 pipeline {
     agent any
-    
     environment{
         ENV = 'dev'
         environment = 'HOA'
         REPO_NAME = 'hdm-common-repo'
     }
-
     stages {
-        stage("Deploy") {
+        stage('Build') {
+            steps{
+                script {
+                    config = loadPipelineConfig()
+                    echo "Building ${config.environment} from ${config.account.id}."
+                }
+            }
+        }
+        stage('Deploy') {
             steps{
                 script{
                     log.info "${env.ENV}"
