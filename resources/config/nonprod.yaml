@@ -1,3 +1,4 @@
 environment: nonprod
-account: account123
+account:
+    id: account-123
     region: ap-southeast-2
