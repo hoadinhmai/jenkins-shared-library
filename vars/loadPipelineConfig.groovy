@@ -1,6 +1,6 @@
 def call(Map parameters = [:]) {
     try {
-        configFile = 'resources/nonprod.yaml'
+        configFile = 'resources/config/nonprod.yaml'
         Map config = script.readYaml file: configFile
         return config
     } catch (Exception e) {
